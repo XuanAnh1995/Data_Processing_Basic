@@ -90,6 +90,38 @@ Qdrant:		Cung cấp một công cụ tìm kiếm vector mã nguồn mở mạnh 
 			Là kỹ thuật tìm kiếm các đối tượng gần giống nhau trong không gian vector
 
 
+6: Embedding Algorithms : Thuật toán tạo Embedding
+
+6.1:	Text Embedding: Embedding Văn bản
+
+	- Word-Level Embedding (Từ)	+ Word2Vec (2013, Google)	
+					+ GloVe (2014, Stanford)
+
+	- Sentence-Level Embedding (Câu & Đoạn văn)
+					+ FastText (2016, Facebook AI)
+					+ BERT (2018, Google)		-> Transformer
+					+ SBERT (Sentence-BERT, 2019), Phiên bản nâng cấp BERT
+					+ OpenAI Embedding (2022, text-embedding-ada-002)
+
+6.2:	Image Embedding: Embedding Hình ảnh
+	
+	- ResNet (2015, Microsoft)
+	- VCG (2014, Oxford)
+	- CLIP (2021, OpenIA)
+	- DINO (2021, Facebook AI)
+
+6.3: 	Audio Embedding : Embedding Âm thanh
+
+	- MFCC (Mel-Frequency Cepstral Coefficients)
+	- Wav2Vec 2.0 (2020, Facebook AI)
+	- Whisper (20222, OpenAI)
+
+6.4: 	Graph Embedding: Embedding Đồ thị
+
+	- DeepWalk (2014)
+	- Node2Vec (2016)
+	- GraphSAGE (2017)
+
 
 
 6: Meaning 
