@@ -1,0 +1,78 @@
+Định dạng số (Tokens) là gì?
+Trong NLP (Xử lý ngôn ngữ tự nhiên), token là đơn vị nhỏ nhất của văn bản mà mô hình AI có thể hiểu và xử lý. 
+Khi nhập một câu vào mô hình AI (GPT, BERT, v.v.), câu đó sẽ được chia thành tokens trước khi xử lý.
+
+1. Các loại Token phổ biến
+	~ Word Tokenization (Tách từ): Mỗi từ là một token.
+	~ Subword Tokenization (Tách theo tiền tố/hậu tố): Tách thành các phần nhỏ hơn để mô hình có thể xử lý từ chưa từng gặp.
+	~ Character Tokenization (Tách ký tự): Mỗi ký tự là một token.
+	~ Byte-Pair Encoding (BPE): Phương pháp mã hóa giúp giảm số lượng tokens cần thiết, thường dùng trong Transformer-based models
+	
+
+2. Vai trò của Tokens trong AI
+	🔹 Tiết kiệm bộ nhớ: Thay vì xử lý từng ký tự riêng lẻ, mô hình có thể nhóm lại thành các token hiệu quả hơn.
+	🔹 Hiểu các từ chưa từng gặp: Nhờ phương pháp tách subword, mô hình có thể đoán nghĩa của từ mới dựa trên các phần quen thuộc.
+	🔹 Kiểm soát độ dài đầu vào: Mô hình AI có giới hạn số tokens, ví dụ như GPT-4 có thể xử lý tối đa 128k tokens.
+
+💡 Tóm lại: Tokens là đơn vị cơ bản giúp AI hiểu và xử lý văn bản. Cách tách token ảnh hưởng đến hiệu suất và khả năng hiểu của mô hình
+
+Quá trình biến đổi từ Văn bản → Token → Mô hình AI xử lý
+
+1. Từ Văn bản thô → Token
+Bước 1: Nhập văn bản
+
+	Ví dụ: "Tôi yêu AI!"
+
+Bước 2: Tokenization (Tách từ thành token)
+
+	Cách phổ biến:
+
+		Word-based Tokenization: "Tôi yêu AI!" → ["Tôi", "yêu", "AI", "!"]
+		Subword Tokenization (BPE, WordPiece): "Tôi yêu AI!" → ["T", "ôi", "yêu", "AI", "!"]
+		Character-based Tokenization: "Tôi yêu AI!" → ["T", "ô", "i", " ", "y", "ê", "u", " ", "A", "I", "!"]
+		
+		📝 Mô hình AI thường dùng Subword Tokenization vì nó cân bằng giữa độ chính xác và hiệu suất xử lý
+
+2. Từ Token → Số hóa (Token ID)
+Bước 3: Mapping token thành số (Token ID)
+
+	Hệ thống sử dụng từ điển (vocabulary) để gán ID cho mỗi token.
+	Ví dụ với BERT:
+	"Tôi" → 3210, "yêu" → 4567, "AI" → 7890, "!" → 102
+	Chuỗi sau khi mã hóa: [3210, 4567, 7890, 102]
+
+	📝 Mô hình AI không hiểu chữ, nó chỉ làm việc với các số!
+
+
+3. Từ Token ID → Vector Embedding
+Bước 4: Chuyển đổi Token ID thành vector
+	Mỗi token ID được ánh xạ vào một vector số thực để mô hình học được ngữ nghĩa.
+	Ví dụ: 
+		3210  → [0.12, -0.34, 0.88, ...]  
+		4567  → [0.45, 0.67, -0.22, ...]  
+		7890  → [-0.78, 0.56, 0.99, ...]  
+
+	Vector này là Word Embedding (như Word2Vec, FastText, hoặc Embeddings từ Transformer).
+	📝 Embedding giúp mô hình hiểu được nghĩa của từ dựa trên ngữ cảnh!
+
+4. Đưa vào Mạng Neural (Transformer, RNN, v.v.)
+Bước 5: Xử lý qua mô hình AICác vector embedding được đưa vào mô hình Deep Learning như:
+
+	Transformer (GPT, BERT, T5, LLaMA)
+	LSTM, GRU (RNN-based models)
+	CNN (ít dùng cho NLP)
+
+Mô hình thực hiện nhiều phép biến đổi toán học để:
+
+	Hiểu ngữ nghĩa câu
+	Học mối quan hệ giữa các từ
+	Dự đoán từ tiếp theo (GPT) hoặc phân loại ý nghĩa câu (BERT)
+
+5. Kết quả đầu ra
+
+	Dự đoán từ tiếp theo: "Tôi yêu" → AI đoán "học"
+	Sinh văn bản mới: "Tôi yêu AI" → "vì nó rất mạnh mẽ!"
+	Dịch ngôn ngữ: "Tôi yêu AI" → "I love AI"
+	Phân loại cảm xúc: "Tôi yêu AI" → "Tích cực"
+
+🚀 Kết quả cuối cùng phụ thuộc vào loại mô hình AI và mục tiêu bài toán!

@@ -1,0 +1,185 @@
+📌 NLP (Natural Language Processing)
+├── 🔤 Tiền xử lý văn bản (Text Preprocessing)
+│ ├── 📏 Làm sạch văn bản (Text Cleaning): regex, stopwords, stemming, lemmatization
+│ ├── 🔡 Mô hình thống kê (Statistical Models): TF-IDF, N-gram
+│ ├── 🏷️ Gán nhãn từ loại (POS Tagging)
+│ ├── 🔍 Nhận dạng thực thể có tên (NER - Named Entity Recognition)
+│ ├── 📖 Phân tích ngữ nghĩa (Semantic Analysis), tổng hợp văn bản (Text Generation)
+│
+├── 💡 Mô hình NLP truyền thống (Traditional NLP Models)
+│ ├── 📖 TF-IDF (Term Frequency - Inverse Document Frequency): Xác định tầm quan trọng của từ
+│ ├── 🔠 Word Embeddings (Biểu diễn từ dưới dạng vector)
+│ │ ├── 🔗 Word2Vec: CBOW, Skip-gram
+│ │ ├── 🚀 FastText: Hỗ trợ từ không phổ biến (OOV)
+│ │ ├── 📌 GloVe (Global Vectors for Word Representation)
+│
+├── 🚀 Deep Learning trong NLP
+│ ├── 🧠 Transformers - Cuộc cách mạng NLP
+│ │ ├── 🔥 Attention Mechanism - Cốt lõi của Transformers
+│ │ ├── 🚀 Self-Attention - Hiểu ngữ cảnh tốt hơn RNN
+│ │ ├── 🌍 Multi-Head Attention - Tăng khả năng học từ dữ liệu
+│ ├── 🔗 Deep Neural Networks (DNNs) - Mạng nơ-ron sâu: 		Input layer, Hidden layer, Output layer
+│ │ ├── 🏗️ Feedforward Neural Networks (FNNs): 				1 hướng input -> hidden -> output
+│   ├── 📚 Multi-Layer Perceptron (MLP): 				(Input Layer) → (Hidden Layer 1) → (Hidden Layer 2) → ... → (Output Layer)
+│ ├── 📷 Convolutional Neural Network (CNN) - Nhận diện ảnh:	
+│ ├── 🔄 Recurrent Neural Network (RNN) - Mạng hồi quy
+│ │ ├── ⏳ Long Short-Term Memory (LSTM):				Forget gate, Input gate, Output gate
+│ │ ├── 🔄 Gated Recurrent Unit (GRU):					Reset gate, Update gate 
+│ ├── 🔄 Autoencoders (AE) - Mạng tự mã hóa
+│ │ ├── 🏗️ Encoder - Mã hóa dữ liệu : Chuyển đầu vào x -> latent representation
+│ │ ├── 🛠️ Decoder - Giải mã dữ liệu: Dùng latent representation tái tạo dữ liệu x' -> Hàm mất mát (Loss Function)
+│ │ ├── 📎 Variational Autoencoder (VAE) - Sinh dữ liệu mới
+│ │ ├── 🧼 Denoising Autoencoder (DAE) - Xử lý nhiễu
+│ │
+│ ├── 🛠 Fine-tuning mô hình Pretrained trên tập dữ liệu riêng
+│ │ ├── 🔧 Huấn luyện mô hình cho nhiệm vụ đặc thù
+│ │ ├── 🔥 Tùy chỉnh theo ứng dụng: Chatbot, Phân loại văn bản,...
+│
+├── 🔎 Ứng dụng thực tế của NLP
+│ ├── 🗣️ Dịch ngôn ngữ (Google Translate, DeepL)
+│ ├── 🤖 Chatbots (ChatGPT, trợ lý ảo Google Assistant, Siri)
+│ ├── 📊 Phân tích cảm xúc (Social Media Monitoring, Customer Feedback)
+│ ├── 📰 Tóm tắt văn bản tự động (Summarization)
+│ ├── 🔍 Hệ thống tìm kiếm thông minh (Google Search, Elasticsearch)
+│ ├── 🎙️ Nhận diện giọng nói (Speech-to-Text, Voice Assistants)
+
+
+1:	NLP (Natural Languge Processing): xử lý ngôn ngữ tự nhiên: Là 1 nhánh của ngôn ngữ học, khoa học máy tính và trí tuệ nhân tạo ; 
+	liên quan đến sự tương tác giữa máy tính và ngôn ngữ tự nhiên của con người, giọng nói, hoặc văn bản.
+
+1.1. 	Text Preprocessing: Tiền xử lý giúp chuẩn bị dữ liệu, văn bản để mô hình NLP hoạt động tốt hơn
+	1.1.1: 	Làm sạch văn bản (Text Cleaning):
+			Regex (Regular Expressions): dùng biểu thức chính quy để chuẩn hóa văn bản (loại bỏ ký tự đặc biệt, dấu câu, ...)
+			Stopwords: Bỏ những từ không quan trọng 
+			Stemming: Cắt gốc từ để giảm số lượng từ vựng
+			Lemmatization: giữ lại gốc từ nhưng dưới dạng có nghĩa hơn so với stemming
+
+	1.1.2: 	Mô hình thống kê (Statistical Models):
+			TF-IDF (Term Frequency - Inverse Document Frequency): Xác định mức độ quan trọng của từ trong một văn bản so với toàn bộ tập dữ liệu
+			N-gram: Phân đoạn văn bản thành nhóm từ liên tiếp (unigram, bigram, trigram...)
+
+	1.1.3: 	Gán nhãn từ loại (POS Tag)
+			Xác định danh từ, động từ, tính từ, ... giúp hiểu ngữ pháp của câu
+
+	1.1.4: 	Nhận dạng thực thể có tên (NER _ Named Entity Recognition)
+			Xác định các thực thể quan trọng như tên người, địa điểm, tổ chức, ngày tháng.
+
+	1.1.5: 	Phân tích ngữ nghĩa (Semantic) và Tổng hợp văn bản (Text Generation)
+			Semantic Analysis: Hiểu ý nghĩa của từ và câu (ví dụ: phân tích cảm xúc)
+			Text Generation: Sinh ra văn bản mới từ dữ liệu đầu vào (GPT, T5)
+
+
+1.2: 	Mô hình NLP truyền thống (Traditional NLP Models)
+
+	1.2.1: 	TF-IDF :Được dùng để trích xuất đặc trưng từ văn bản dựa trên tần suất xuất hiện của từ.
+		Word Embeddings (Biểu diễn từ dạng vector): Thay vì xem từ như một chuỗi ký tự, ta biểu diễn nó bằng vector số để mô hình hiểu được ngữ nghĩa.
+			Word2Vec (CBOW & Skip-gram):
+				CBOW: Dự đoán từ dựa vào ngữ cảnh xung quanh
+				Skip-gram: Dự đoán ngữ cảnh dựa vào từ trung tâm
+			FastText : Cải tiến từ Word2Vec, hỗ trợ từ chưa xuất hiện trong tập huấn luyện (OOV - Out of Vocabulary).
+			GloVe (Global Vectors for Word Representation): Học từ vector từ thống kê tần suất đồng xuất hiện trong tập dữ liệu lớn
+
+1.3: 	Deep Learning trong NLP
+	Là một nhánh của Machine Learning (Học máy), trong đó mô hình sử dụng mạng nơ-ron nhân tạo nhiều tầng 
+	(Deep Neural Networks - DNNs) để học từ dữ liệu.
+
+1.3.1: 	Deep Neural Networks (DNNs) - Mạng nơ-ron sâu
+	Mạng nerual bao gồm nhiều lớp nerual nhân tạo để học và biểu diễn dữ liệu
+	1 DNN điển hình có cấu trúc như sau:
+		Input Layer (Lớp đầu vào): Nhận dữ liệu ban đầu: số, ảnh, văn bản, ...
+		Hidden Layer (Lớp ẩn): Các tầng nerual trung gian giúp học đặc trưng cơ bản
+		Output Layer (Lớp đầu ra): Trả về dự đoán hoặc phân loại kết quả
+
+	1.3.1.1:	FNNs (Feedforward Neural Networks): Mạng truyền thẳng
+			Là dạng DNN đơn giản nhất, dữ liệu di chuyển theo 1 hướng input -> hidden -> output
+			Ứng dụng: Phân loại dữ liệu, dự đoán giá trị
+
+	1.3.1.2:	Multi-Layer Perceptron (MLP): Mạng Perceptron nhiều lớp
+			Là biến thể của FNNs với ít nhất 1 hidden layer ; là mạng neural cơ bản với nhiều tầng (feedforward).	
+			Ứng dụng: Phân loại văn bản, dự đoán chuỗi thời gian
+
+1.3.2:	Convolutional Neural Network (CNN): Mạng tích chập
+	Mô hình học sâu cho xử lý ảnh và dữ liệu không gian (spatial data)
+	Kiến trúc gồm:
+		Convolutional layers: Lớp tích chập; 
+			Là lớp quan trọng nhất của CNN
+			Sử dụng bộ lọc (filters/kernels) để trích xuất đặc trưng từ ảnh.
+			Mỗi bộ lọc quét (convolve) qua ảnh đầu vào, giữ lại đặc trưng như đường viền, góc cạnh,..
+			Kết quả tạo ra bản đồ đặc trưng (feature maps).
+		Pooling layers:	Lớp giảm kích thước
+			Giảm kích thước của feature maps, giúp mô hình bớt phức tạp và tránh overfitting.
+			Phổ biến nhất là Max Pooling: Lấy giá trị lớn nhất trong mỗi vùng nhỏ của feature map.
+		Fully connected layers: Lớp kết nối đầy đủ
+			Nhận đầu vào từ các feature maps đã giảm kích thước và đưa ra dự đoán
+			Hoạt động giống mạng nơ-ron truyền thống (Feedforward Neural Network - FNN)
+			Sử dụng hàm kích hoạt phi tuyến như ReLU, Softmax để đưa ra quyết định
+	Ứng dụng CNN trong thực tế
+		🚗 Xe tự lái: Nhận diện biển báo, vạch đường.
+		📷 Nhận diện khuôn mặt: Face ID trên iPhone.
+		🔬 Chẩn đoán y tế: Phát hiện ung thư từ ảnh X-ray.
+		🛍 Phát hiện sản phẩm trong cửa hàng: Amazon Go.
+
+1.3.3:	Recurrent Neural Network (RNN) - Mạng nơ-ron hồi quy
+	- Là một mạng nơ-ron nhân tạo được thiết kế để xử lý dữ liệu tuần tự, chẳng hạn như văn bản, giọng nói, chuỗi thời gian, ...
+	- Khác với mạng nơ-ron truyền thống Feedforward Neural Networks - FNN, RNN có bộ nhớ (memory) để lưu trữ thông tin từ bước trước đó,
+		giúp nó xử lý dữ liệu có tính liên tục theo thời gian
+	- Mạng RNN có cấu trúc lặp lại (recurrent structure), trong đó đầu ra của bước trước sẽ trở thành đầu vào của bước sau
+	- Vấn đề của RNN : 
+		+ Vanishing Gradient Problem: Khi chuỗi dữ liệu quá dài, thông tin đầu chuỗi khó truyền về cuối,làm suy giảm hiệu suất lọc
+		+ Không xử lý tốt quan hệ dài hạn: Vì trạng thái ẩn phải chứa thông tin từ nhiều bước trước, việc lưu trữ thông tin lâu dài gặp khó khăn
+	- Các cải tiến của RNN: Mạng nơ-ron hồi quy = Recurrent Neural Network:
+		+ Long Short_ Term Memory (LSTM): 
+			_ Là 1 biến thể của RNN, được cải tiến giúp mô hình có thể lưu trữ thông tin trong thời gian dài
+			dựa trên các cổng điều khiển gates
+			_ Cấu trúc của 1 Long Short _ Term Memory (LSTM):
+				~ Forget Gate (): Quyết định giữ hay bỏ thông tin cũ
+				~ Input Gate (): Kiểm soát thông tin mới thêm vào bộ nhớ
+				~ Output Gate (): Xác định giá trị nào được sử dụng làm đầu ra
+			_ Ứng dụng của LSTM: Long Short_ Term Memory
+				~ Dịch ngôn ngữ (Google Translate)
+				~ Nhận diện giọng nói (Siri, Alexa)
+				~ Phân tích chuỗi thời gian (Dự đoán giá cổ phiếu)
+		+ Gated Recurrent Unit (GRU):
+			_ Là một phiên bản đơn giản hơn của LSTM (Long Short_ Term Memory) nhưng vẫn duy trì hiệu suất cao
+			_ Điểm khác biệt với so LSTM (Long Short _ Term Memory) là GRU (Gated Recurrent Unit) chỉ có 2 cổng thay vì 3 cổng  như LSTM (Forger Gate, Input Gate, Output Gate)
+				~ Reset Gate: Kiểm soát lượng thông tin cần quên
+				~ Update Gate : Kiểm soát lượng thông tin cần lưu trữ 
+			_ GRU (Gated Recurrent Unit) có ít tham số hơn -> Huấn luyện nhanh hơn và hiệu quả hơn với chuỗi ngắn
+			_ Ứng dụng của GRU (Gated Recurrent Unit):
+				~ Chatbots (GPT, trợ lý ảo)
+				~ Nhận diện cảm xúc trong văn bản
+				~ Dự đoán dữ liệu chuỗi thời gian 
+	
+1.3.4: Autoencoders (AE):
+	- Mạng nerual nhân tạo (Nerual Network) học cách tái tạo dữ liệu đầu vào bằng cách nén nó xuống dạng biểu diễn tiềm ẩn (latent representation), rồi khôi phục lại
+	- Mục đích: 
+		~ Giảm chiều dữ liệu (Dimensionality Reduction): Tương tự PCA nhưng mạnh mẽ hơn
+		~ Phát hiện bất thường (Anomaly Detection): Nhận diện lỗi hoặc gian lận
+		~ Nén dữ liệu (Data Compression): giảm kích thước mà vẫn giữ thông tin quan trọng
+		~ Sinh dữ liệu mới (Data Generation): Phục vụ AI sáng tạo
+	- Cấu trúc: 
+		~ Encoder: Bộ mã hóa: Chuyển dữ liệu gốc thành dạng biểu diễn tiềm ẩn(latent representation)
+		~ Decoder: Bộ giải mã: Tái tạo dữ liệu từ latent space
+	- Các biến thể của Autoencoders (AE):
+		+ Denoising Autoencoder (DAE): Tự mã hóa khử nhiễu
+			~ Mục đích: Học cách tái tạo dữ liệu từ phiên bản bị nhiễu
+			~ Ứng dụng: Loại bỏ nhiễu trong ảnh, văn bản
+		+ Variational Autoencode (VAE): Tữ mã hóa biến thể 
+			~ Mục đích: Học phân phối xác suất dữ liệu, không chỉ tái tạo chính xác mà còn sinh ra dữ liệu mới giống đầu vào
+			~ Ứng dụng: Sinh ảnh giả, mô hình hóa dữ liệu 
+		+ Sparse Autoencoder: Tự mã hóa thưa
+			~ Mục đích: Thêm ràng buộc làm cho latent representation thưa (chỉ một số ít nerual hoạt động)
+			~ Ưng dụng: Trích xuất đặc trưng quan trọng từ dữ liệu
+		+ Convolutional Autoencoder (CAE): Tự mã hóa tích chập
+			~ Mục đích: Xử lý ảnh bằng cách dùng mạng CNN thay vì MLPanh
+			~ Ứng dụng: Nén ảnh, khử nhiễu, phục hồi ảnh bị mất dữ liệu
+
+
+
+
+
+
+
+
+
+

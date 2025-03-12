@@ -1,0 +1,114 @@
+🤗 Hugging Face  
+├── 🚀 Model Hub (Kho mô hình AI có sẵn)  
+│   ├── NLP (BERT, GPT, T5, BART,...)  
+│   ├── Vision (ViT, DETR,...)  
+│   ├── Speech (Whisper, Wav2Vec2,...)  
+│   ├── Multimodal (CLIP, Flamingo,...)  
+│   ├── Community Models (Mô hình từ cộng đồng)  
+│   └── AutoTrain (Huấn luyện mô hình tự động)  
+│  
+├── 🏗️ Transformers (Thư viện mô hình AI)  
+│   ├── NLP (Xử lý ngôn ngữ tự nhiên)  
+│   ├── Vision (Thị giác máy tính)  
+│   ├── Audio (Xử lý giọng nói)  
+│   ├── Multimodal (Mô hình kết hợp nhiều dạng dữ liệu)  
+│   ├── Trainer API (Huấn luyện dễ dàng)  
+│   └── Pipelines (Inference nhanh với mô hình có sẵn)  
+│  
+├── 🔄 Datasets (Kho dữ liệu AI)  
+│   ├── NLP (SQuAD, IMDB, CoLA,...)  
+│   ├── Vision (COCO, ImageNet,...)  
+│   ├── Speech (LibriSpeech, Common Voice,...)  
+│   ├── Multimodal (LAION-5B, Conceptual Captions,...)  
+│   ├── Data Loading API (Dễ dàng tải và xử lý dữ liệu)  
+│   └── Dataset Viewer (Giao diện xem dữ liệu trực tuyến)  
+│  
+├── 📦 Tokenizers (Xử lý văn bản nhanh)  
+│   ├── WordPiece (Dùng trong BERT)  
+│   ├── Byte-Pair Encoding (Dùng trong GPT)  
+│   ├── SentencePiece (Dùng trong T5, mT5,...)  
+│   ├── Fast Tokenizers (Tăng tốc mã hóa văn bản)  
+│   └── Custom Tokenizers (Tự thiết kế tokenizer riêng)  
+│  
+├── 📡 Inference API (Triển khai mô hình nhanh)  
+│   ├── Hosted Inference (Gọi API trực tiếp)  
+│   ├── 🤗 Spaces (Deploy app với Gradio, Streamlit)  
+│   ├── Text Generation (GPT, T5,...)  
+│   ├── Image Classification (ViT, ConvNext,...)  
+│   ├── Speech Recognition (Whisper, Wav2Vec2,...)  
+│   ├── Conversational AI (Chatbot với DialoGPT, BlenderBot)  
+│   ├── Embeddings API (Sinh vector embedding cho NLP)  
+│   └── Text-to-Speech API (Chuyển văn bản thành giọng nói)  
+│  
+└── 🛠️ Additional Tools (Công cụ bổ trợ)  
+    ├── 🤗 Hub CLI (Tương tác với Hugging Face bằng dòng lệnh)  
+    ├── 🤗 Accelerate (Tăng tốc huấn luyện mô hình)  
+    ├── 🤗 PEFT (Huấn luyện mô hình hiệu quả với ít tài nguyên)  
+    ├── 🤗 Optimum (Tối ưu hóa mô hình trên phần cứng đặc biệt)  
+    ├── 🤗 TRL (Huấn luyện mô hình với Reinforcement Learning)  
+    ├── 🤗 Evaluate (Đánh giá mô hình AI dễ dàng)  
+    ├── 🤗 Gradio (Tạo giao diện AI nhanh chóng)  
+    └── 🤗 Streamlit (Xây dựng web app AI dễ dàng)  
+
+Hugging Face - Hệ sinh thái AI toàn diện
+
+Hugging Face là công ty phát triển thư viện Transformers.
+
+Transformers là thư viện mã nguồn mở do Hugging Face phát triển, giúp dễ dàng sử dụng 
+		các mô hình NLP (Natural Language Processing) như BERT, GPT, T5, v.v.
+
+Hugging Face Model Hub là nền tảng lưu trữ và chia sẻ các mô hình AI, 
+		trong đó có hàng nghìn mô hình sử dụng thư viện Transformers.
+		Nó hỗ trợ nhiều loại mô hình từ 
+			~ NLP (Natural Language Processing): BERT, GPT, T5, BART, dịch máy, tóm tắt văn bản, chatbot, ...
+			~ thị giác máy tính (Vision): ViT, DERT, dùng để phân loại ảnh, nhận diện vật thể
+			~ xử lý giọng nói (Audio/ Speech): Whisper, Wav2Vec2, dùng để nhận diện giọng nói, chuyển giọng nói thành văn bản
+			~ mô hình đa phương thức (Multimodal): xử lý đồng thời nhiều loại dữ liệu ví dụ: 
+				CLIP (văn bản + hình ảnh) , Flamingo (đa phương tiện)
+				
+			~ Community Models: Mô hình AI do cộng đồng phát triển, có thể tải xuống và miễn phí sử dụng
+			~ AutoTrain : Dịch vụ giúp tự động huấn luyện mô hình AI mà không cần nhiều kiến thức kỹ thuật
+
+
+	Pipelines: 	Giao diện đơn giản để chạy các mô hình AI mà không cần hiểu sâu về kỹ thuật
+
+Datasets (Kho dữ liệu AI):
+	NLP: 		Các tập dữ liệu văn bản như SQuAD (câu hỏi - trả lời), IMDB (đánh giá phim), CoLA (ngữ pháp câu tiếng Anh).
+	Vision: 	Tập dữ liệu ảnh như COCO (chú thích hình ảnh), ImageNet (phân loại ảnh).
+	Speech: 	Dữ liệu giọng nói như LibriSpeech (sách đọc), Common Voice (giọng nói cộng đồng).
+	Data Loading API: Công cụ giúp tải và xử lý dữ liệu AI dễ dàng
+	Dataset Viewer: Giao diện web giúp xem nội dung tập dữ liệu trực tiếp trên trình duyệt.
+
+Tokenizers (Thư viện xử lý văn bản nhanh): Tokenizers giúp chuyển đổi văn bản thành định dạng số (tokens) để mô hình AI có thể hiểu được.
+	WordPiece: 			Phương pháp token hóa sử dụng trong BERT.
+	Byte-Pair Encoding (BPE): 	Được dùng trong GPT, giúp token hóa hiệu quả.
+	SentencePiece: 			Được sử dụng trong T5, mT5, không cần tách từ trước khi token hóa.
+	Fast Tokenizers: 		Phiên bản tokenizers tối ưu giúp xử lý văn bản nhanh hơn.
+	Custom Tokenizers: 		Cho phép tùy chỉnh thuật toán token hóa theo nhu cầu riêng.
+
+Inference API (Dịch vụ triển khai mô hình AI nhanh chóng): Hugging Face cung cấp API giúp chạy mô hình AI mà không cần cài đặt cục bộ.
+	Hosted Inference: 	Chạy mô hình AI trực tiếp thông qua API.
+	Spaces: 		Dịch vụ giúp tạo web ứng dụng AI bằng Gradio hoặc Streamlit.
+	Text Generation: 	Sinh văn bản tự động bằng GPT, T5.
+	Image Classification: 	Nhận diện hình ảnh bằng ViT, ConvNext.
+	Speech Recognition: 	Nhận diện giọng nói bằng Whisper, Wav2Vec2.
+	Conversational AI: 	Tạo chatbot với DialoGPT, BlenderBot.
+	Embeddings API: 	Sinh vector embedding cho NLP, giúp tìm kiếm và phân loại văn bản
+	Text-to-Speech API: 	Chuyển văn bản thành giọng nói.
+
+Additional Tools (Các công cụ bổ trợ)
+	Hub CLI: 		Công cụ dòng lệnh giúp tương tác với Hugging Face.
+	Accelerate: 		Tăng tốc huấn luyện mô hình trên GPU/TPU
+	PEFT (Parameter-Efficient Fine-Tuning): Tinh chỉnh mô hình lớn với ít tài nguyên
+	Optimum: 		Tối ưu hóa mô hình cho phần cứng như Intel, NVIDIA, Habana,...
+	TRL (Transformers Reinforcement Learning): Hỗ trợ huấn luyện mô hình bằng Reinforcement Learning.
+	Evaluate: 		Công cụ đánh giá hiệu suất mô hình AI
+	Gradio: 		Tạo giao diện người dùng AI đơn giản
+	Streamlit: 		Xây dựng web app AI nhanh chóng.
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+⚙️ LangChain
+├── 🔗 Kết nối với LLMs (GPT, BERT,...)
+├── 📚 Truy xuất tài liệu (RAG - Retrieval Augmented Generation)
+│ ├── Vector Databases: FAISS, ChromaDB
+│ ├── Semantic Search
+│
+├── 🏗️ Tạo ứng dụng AI
+│ ├── Chatbots thông minh
+│ ├── Hệ thống hỏi đáp từ tài liệu
+│ ├── Xây dựng trợ lý AI tự động hóa

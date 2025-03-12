@@ -1,0 +1,126 @@
+📌 Python
+├── 🏗️ Thư viện khoa học dữ liệu
+│ ├── 📊 pandas (Xử lý dữ liệu dạng bảng)
+│ ├── 🔢 NumPy (Xử lý ma trận, số học hiệu suất cao)
+│ ├── 📈 Matplotlib, Seaborn (Vẽ biểu đồ trực quan)
+│
+├── 🤖 Machine Learning
+│ ├── 📊 Học có giám sát (Supervised Learning)
+│ │ ├── 📈 Hồi quy: Linear Regression, Logistic Regression
+│ │ ├── 🌳 Cây quyết định: Decision Trees, Random Forest, XGBoost
+│ │ ├── 🧠 Deep Learning (Học sâu)
+│ │ │ ├── 🔗 Deep Neural Networks (DNNs) - Mạng nơ-ron sâu
+│ │ │ │ ├── 🏗️ Feedforward Neural Networks (FNNs)
+│ │ │ │ ├── 📚 Multi-Layer Perceptron (MLP)
+│ │ │ ├── 📷 Convolutional Neural Network (CNN) - Nhận diện ảnh
+│ │ │ ├── 🔄 Recurrent Neural Network (RNN) - Mạng hồi quy
+│ │ │ │ ├── ⏳ Long Short-Term Memory (LSTM)
+│ │ │ │ ├── 🔄 Gated Recurrent Unit (GRU)
+│ │ │ ├── 🔄 Autoencoders (AE) - Mạng tự mã hóa
+│ │ │ │ ├── 🏗️ Encoder - Mã hóa dữ liệu
+│ │ │ │ ├── 🛠️ Decoder - Giải mã dữ liệu
+│ │ │ │ ├── 📎 Variational Autoencoder (VAE) - Sinh dữ liệu mới
+│ │ │ │ ├── 🧼 Denoising Autoencoder (DAE) - Xử lý nhiễu
+│ │ │ ├── 🎯 **Tối ưu mô hình AI**
+│ │ │ │ ├── ✍️ Prompt Engineering (Thiết kế prompt)
+│ │ │ │ ├── 🛠️ Fine-tuning (Huấn luyện tinh chỉnh)
+│ │ │ │ ├── 🔍 RAG (Truy xuất dữ liệu tăng cường)
+│ │ │ ├── 📌 Ứng dụng: Dự đoán, phân loại, nhận diện hình ảnh
+│ │
+│ ├── 🔍 Học không giám sát (Unsupervised Learning)
+│ │ ├── 📎 Gom cụm: K-Means, DBSCAN, Hierarchical Clustering
+│ │ ├── 🔍 Giảm chiều dữ liệu: PCA, t-SNE
+│ │
+│ ├── 🎭 Học tăng cường (Reinforcement Learning)
+│ ├── 🤖 Thuật toán chính: Deep Q-Network (DQN), PPO, A3C
+│ ├── 🏆 Ứng dụng: AI chơi game, điều khiển robot
+
+1️  Thư viện khoa học dữ liệu
+Python là một trong những ngôn ngữ phổ biến nhất cho khoa học dữ liệu nhờ có nhiều thư viện mạnh mẽ:
+
+📊 pandas:
+	Hỗ trợ làm việc với dữ liệu dạng bảng (DataFrame).
+	Cung cấp các công cụ xử lý dữ liệu như lọc, nhóm, gộp, merge.
+	Tương tự như Excel nhưng mạnh hơn cho lập trình.
+
+🔢 NumPy:
+	Hỗ trợ xử lý mảng và ma trận số học hiệu suất cao.
+	Dùng trong tính toán khoa học, machine learning.
+
+📈 Matplotlib, Seaborn:
+	Matplotlib: Tạo biểu đồ cơ bản như đường, cột, scatter plot.
+	Seaborn: Thư viện mở rộng của Matplotlib, tạo biểu đồ đẹp hơn với nhiều tính năng trực quan hóa dữ liệu.
+
+🔹 Ứng dụng: Phân tích dữ liệu, trực quan hóa số liệu, làm sạch dữ liệu trước khi đưa vào Machine Learning.
+
+2.1 Học có giám sát (Supervised Learning)
+Học có giám sát là phương pháp dùng dữ liệu có nhãn để huấn luyện mô hình. Nó gồm 2 loại chính:
+
+🔹 Hồi quy (Regression)
+	Dự đoán giá trị số liên tục (ví dụ: dự báo giá nhà, doanh thu).
+	Thuật toán phổ biến:
+		Linear Regression (Hồi quy tuyến tính): Mô hình dự đoán bằng cách vẽ đường thẳng tối ưu giữa các điểm dữ liệu.
+		Logistic Regression (Hồi quy logistic): Dùng cho bài toán phân loại nhị phân (ví dụ: phân loại email spam hoặc không spam).
+
+🔹 Cây quyết định và các thuật toán ensemble
+	Decision Trees (Cây quyết định): Xây dựng các quyết định theo từng nhánh.
+	Random Forest: Tập hợp nhiều cây quyết định để cải thiện độ chính xác.
+	XGBoost: Mô hình boosting mạnh mẽ, thường dùng trong các cuộc thi AI.
+
+🔹 Deep Learning (Học sâu)
+	Có viết ở file NLP (Natural Language Processing)
+
+2.1.2: **Tối ưu mô hình AI**
+	Prompt Engineering (Thiết kế prompt):
+		Là nghệ thuật và kỹ thuật viết prompt (lời nhắc) để hướng mô hình AI tạo ra 
+			đầu ra mong muốn mà không cần thay đổi trọng số của mô hình
+		Sử dụng kỹ thuật: zero-shot learning, few-shot learning, chain-of-thought prompting
+		
+	Fine-tuning (Huấn luyện tinh chỉnh):
+		Là quá trình điều chỉnh trọng số của mô hình bằng cách huấn luyện lại nó trên 
+			một tập dữ liệu cụ thể/ chuyên biệt
+		Sử dụng Transfer Learning để tận dụng mô hình pre-trained
+		Giup mô hình trở lên ít ảo tưởng hơn (hallucination) vì được huấn luyện trên dữ liệu
+			có kiểm soát
+
+	RAG (Truy xuất dữ liệu tăng cường):
+		Là mô hình kết hợp giữa truy xuất thông tin (retrieval) từ nguồn dữ liệu bên ngoài
+			và mô hình sinh văn bản (generation) để cải thiện chất lượng đầu ra
+		
+	KẾT LUẬN: Dùng RAG để lấy thông tin mới + Prompt Engineering để tối ưu đầu ra + Fine-tuning cho tác vụ chuyên biệt
+
+2.2 Học không giám sát (Unsupervised Learning)
+Học không giám sát không cần dữ liệu nhãn, chủ yếu dùng để tìm mẫu ẩn trong dữ liệu. Nó được áp dụng rộng rãi trong phân 
+tích dữ liệu lớn, xử lý hình ảnh, nhận diện đối tượng
+🔹 Gom cụm (Clustering): Phân chia dữ liệu thành các nhóm có điểm tương đồng
+	K-Means: Chia dữ liệu thành các cụm bằng cách tìm trung tâm của từng nhóm
+	DBSCAN (Density-Based Spatial Clustering of Applications with Nose): Phân cụm dựa trên mật độ điểm dữ liệu,
+		phù hợp dữ liệu có hình dạng phức tạp
+	Hierarchical Clustering: Phân cụm theo dạng cây phân cấp, có thể tách cụm lớn thành các cụm nhỏ hơn
+
+🔹 Giảm chiều dữ liệu (Dimensionality Reduction): Giảm số chiều của dữ liệu để tối ưu hóa mô hình mà vẫn giữ được thông tin quan trọng
+	PCA (Principal Component Analysis): Giảm số chiều dữ liệu bằng cách tìm các thành phần chính (principal components)
+	t-SNE (t-Distributed Stochastic Neighbor Embedding): Kỹ thuật giúp trực quan hóa dữ liệu nhiều chiều thành 2D hoặc 3D.
+	Autoencoders (AE): Mạng neural dùng để giảm chiều dữ liệu và khôi phục lại thông tin gốc
+			
+
+💡 Ứng dụng thực tế: Nhận diện nhóm khách hàng tiềm năng, phân tích thị trường, giảm chiều dữ liệu để tối ưu hiệu suất.
+
+
+2.3 Học tăng cường (Reinforcement Learning - RL)
+	RL là phương pháp AI học qua thử nghiệm và thưởng phạt.
+	Dùng agent (tác nhân) để thực hiện hành động trong môi trường và tối ưu phần thưởng.
+
+	🔹 Thuật toán phổ biến:
+		DQN (Deep Q-Network): Học cách chơi game bằng việc thử nghiệm.
+		PPO (Proximal Policy Optimization): Dùng trong AI robot.
+		A3C (Asynchronous Advantage Actor-Critic): Tối ưu bài toán điều khiển phức tạp.
+
+	💡 Ứng dụng thực tế:
+		🚗 AI tự lái xe (Tesla, Waymo).
+		🎮 AI chơi game như AlphaGo (đánh bại con người trong cờ vây).
+		🤖 Robot tự động hóa trong công nghiệp.
+
+
+
+

@@ -1,0 +1,233 @@
+🌍 Lịch sử phát triển LLMs (Large Language Models)
+├── 🔍 Thời kỳ đầu: Mô hình ngôn ngữ truyền thống (Trước 2017)
+│   ├── 📏 Rule-based NLP (Dựa trên quy tắc, thống kê)
+│   ├── 📊 N-grams, Hidden Markov Models (HMMs), Conditional Random Fields (CRFs)
+│   ├── 🏗 Word Embeddings (Word2Vec, GloVe, FastText) - 2013-2016
+│   ├── 🔄 Recurrent Neural Networks (RNNs), LSTM, GRU - 2014-2016
+│   ├── 🔥 Attention Mechanism (Bahdanau, 2014) - Tiền đề cho Transformers
+│
+├── 🚀 Giai đoạn Transformer & BERT (2017-2019) - Cuộc cách mạng NLP
+│   ├── 📌 Transformer ("Attention is All You Need" - 2017) - Vaswani et al.
+│   ├── 🏗 BERT (Google, 2018) - Hiểu ngữ cảnh hai chiều
+│   │   ├── RoBERTa (Facebook, 2019) - Cải tiến BERT
+│   │   ├── ALBERT (Google, 2019) - Nhẹ hơn, tối ưu hơn
+│   │   ├── DistilBERT (Hugging Face, 2019) - Mô hình nhỏ gọn hơn
+│   ├── 🔗 Transformer Decoder xuất hiện → GPT-2 (OpenAI, 2019)
+│
+├── 🤖 Giai đoạn LLMs bùng nổ (2020 - 2022)
+│   ├── 🚀 GPT-3 (OpenAI, 2020) - 175 tỷ tham số
+│   ├── 🔗 T5 (Google, 2020) - Mô hình Seq2Seq Transformer mạnh mẽ
+│   ├── 🔥 BART (Facebook, 2020) - Tối ưu hóa sinh văn bản
+│   ├── 🤗 Hugging Face phát triển mạnh - Thư viện Transformers phổ biến
+│   ├── 🔄 OpenAI API - GPT-3 được thương mại hóa
+│   ├── 🏗 Codex (GPT-3.5, OpenAI, 2021) - Hỗ trợ lập trình (GitHub Copilot)
+│
+├── 🌐 Kỷ nguyên AI hội thoại & Đa phương thức (2023 - nay)
+│   ├── 🔥 ChatGPT (GPT-3.5, GPT-4, OpenAI, 2023) - Cách mạng chatbot AI
+│   ├── 🦙 LLaMA (Meta, 2023) - Đối thủ mở mã nguồn của GPT
+│   ├── 🏗 Falcon (AI21 Labs, 2023) - Thách thức OpenAI
+│   ├── 📌 Claude AI (Anthropic, 2023) - AI tập trung vào an toàn
+│   ├── 🏆 GPT-4 (OpenAI, 2023) - Cải tiến mạnh mẽ so với GPT-3
+│   ├── 🔥 Google Gemini (2024) - AI đa phương thức, cạnh tranh GPT-4
+│   ├── 🤖 Mistral AI (2024) - LLMs mở mạnh mẽ
+│
+└── 🔮 Xu hướng & tương lai của LLMs
+    ├── 🚀 AI đa phương thức (Multimodal AI) - Văn bản, hình ảnh, video
+    ├── 🧠 Mô hình nhỏ gọn, tối ưu tài nguyên (Tiny LLMs)
+    ├── 🔎 Tăng tính minh bạch & kiểm soát AI (AI Ethics)
+    ├── 🏗 Tích hợp AI vào ứng dụng thực tế (AI Assistants, Copilots)
+    ├── 🔬 Hướng đến Trí tuệ nhân tạo tổng quát (AGI)
+
+
+LLMs :???
+LM: Language Model: Mô hình ngôn ngữ : Là 1 thuật toán AI có khả năng hiểu và tạo ra các văn bản dựa trên dữ liệu được huấn luyện
+LLMs: Lagre Language Models: Là phiên bản mở rộng của Mô hình ngôn ngữ, với hàng tỷ tham số , giúp cải thiện khả năng sinh văn bản, phân tích và trả lời câu hỏi
+
+Transformers - 	Cuộc cách mạng NLP
+			Là 1 loại của DNN (Deep Neural Networks)
+
+			Transformer có hai thành phần chính:
+				🔹 (1) Encoder (Mã hóa đầu vào) – BERT, T5
+				🔹 (2) Decoder (Giải mã đầu ra) – GPT, T5
+				+-----------------+       +-----------------+
+				|    Encoder 1    | --->  |    Decoder 1    |
+				+-----------------+       +-----------------+
+				|    Encoder 2    | --->  |    Decoder 2    |
+				+-----------------+       +-----------------+
+				|       ...       |       |       ...       |
+				+-----------------+       +-----------------+
+				|    Encoder N    | --->  |    Decoder N    |
+				+-----------------+       +-----------------+
+
+			Mỗi encoder và decoder gồm nhiều lớp (layers) chồng lên nhau.
+
+			Mỗi encoder layer bao gồm 2 thành phần chính:
+			🔹 (1) Multi-Head Self-Attention
+			🔹 (2) Feedforward Neural Network (FFN)
+
+			Sơ đồ một Encoder Layer:
+			+------------------------------------+
+			| Input Embeddings (Biểu diễn từ)   |
+			+------------------------------------+
+			| Positional Encoding (Vị trí từ)   |
+			+------------------------------------+
+			| Multi-Head Self-Attention         |
+			+------------------------------------+
+			| Add & Norm (Residual Connection)  |
+			+------------------------------------+
+			| Feedforward Neural Network (FFN)  |
+			+------------------------------------+
+			| Add & Norm (Residual Connection)  |
+			+------------------------------------+
+			
+			🔹 (1) Multi-Head Self-Attention
+				Giúp mỗi từ tương tác với tất cả các từ khác trong câu.
+				Xác định mức độ liên quan giữa các từ bằng cơ chế Self-Attention.
+				Multi-Head Attention chạy nhiều Attention Mechanisms song song.
+
+			Cấu Trúc Chi Tiết của Một Decoder Layer
+			Mỗi decoder layer cũng có 2 thành phần chính, nhưng phức tạp hơn một chút:
+			🔹 (1) Masked Multi-Head Self-Attention
+			🔹 (2) Multi-Head Attention (Encoder-Decoder Attention)
+			🔹 (3) Feedforward Neural Network (FFN)
+
+			Sơ đồ một Decoder Layer:
+			+------------------------------------+
+			| Input Embeddings (Biểu diễn từ)   |
+			+------------------------------------+
+			| Positional Encoding (Vị trí từ)   |
+			+------------------------------------+
+			| Masked Multi-Head Self-Attention  |
+			+------------------------------------+
+			| Add & Norm (Residual Connection)  |
+			+------------------------------------+
+			| Multi-Head Attention (Encoder-Decoder) |
+			+------------------------------------+
+			| Add & Norm (Residual Connection)  |
+			+------------------------------------+
+			| Feedforward Neural Network (FFN)  |
+			+------------------------------------+
+			| Add & Norm (Residual Connection)  |
+			+------------------------------------+
+
+			🔹 (1) Masked Multi-Head Self-Attention
+				Giống như Self-Attention của Encoder, nhưng có Masking để đảm bảo mô hình không nhìn thấy từ tương lai.
+				Áp dụng cho các bài toán sinh văn bản như GPT.
+			🔹 (2) Multi-Head Attention (Encoder-Decoder Attention)
+				Nhận đầu ra từ Encoder và giúp Decoder tập trung vào thông tin quan trọng.
+			🔹 (3) Feedforward Neural Network (FFN)
+				Biến đổi dữ liệu từ Attention thành dạng phù hợp để sinh đầu ra.
+
+
+
+Transformers là cuộc cách mạng của NLP, vượt xa RNN/LSTM trong hầu hết các ứng dụng hiện đại!
+
+🔍 Thời kỳ đầu: Mô hình ngôn ngữ truyền thống (Trước 2017)
+	Trước khi các mô hình Transformer xuất hiện, NLP chủ yếu dựa trên quy tắc thống kê và mô hình nơ-ron hồi quy.
+
+📏 Rule-based NLP:
+	Dựa trên luật ngữ pháp và quy tắc được lập trình sẵn.
+	Hạn chế: Không linh hoạt, khó mở rộng cho các ngữ cảnh phức tạp.
+
+📊 N-grams, Hidden Markov Models (HMMs), Conditional Random Fields (CRFs):
+	N-grams: Mô hình dự đoán từ tiếp theo dựa trên xác suất của các từ trước đó.
+	HMMs: Mô hình Markov ẩn giúp xử lý dữ liệu chuỗi như nhận diện giọng nói.
+	CRFs: Mô hình xác suất có điều kiện giúp nhận diện thực thể (Named Entity Recognition - NER).
+
+🏗 Word Embeddings (Word2Vec, GloVe, FastText) - 2013-2016:
+	Cung cấp biểu diễn vector cho từ, giúp máy tính hiểu được mối quan hệ giữa các từ.
+	Word2Vec: Chuyển đổi từ thành vector dựa trên ngữ cảnh.
+	GloVe: Kết hợp thông tin toàn bộ tập dữ liệu để học các mối quan hệ giữa từ.
+	FastText: Cải tiến Word2Vec, hỗ trợ cả subword embeddings.
+
+🔄 RNNs, LSTM, GRU - 2014-2016:
+	RNNs: Mạng nơ-ron hồi quy, xử lý dữ liệu chuỗi nhưng dễ gặp vấn đề "quên thông tin dài hạn".
+	LSTM: Giải quyết vấn đề trên bằng cơ chế cổng (gating mechanism).
+	GRU: Biến thể đơn giản hơn của LSTM, giúp tăng tốc độ huấn luyện.
+
+🔥 Attention Mechanism (Bahdanau, 2014):
+	Cho phép mô hình tập trung vào các từ quan trọng trong câu, là tiền đề cho Transformer.
+	Cải thiện đáng kể hiệu suất của các mô hình dịch máy (Machine Translation).
+
+🚀 Giai đoạn Transformer & BERT (2017-2019) - Cuộc cách mạng NLP
+
+📌 Transformer ("Attention is All You Need" - 2017, Vaswani et al.)
+	Loại bỏ RNN, sử dụng cơ chế Self-Attention và Multi-Head Attention.
+	Xử lý song song nhanh hơn, giúp NLP đột phá về hiệu suất.
+
+🏗 BERT (Google, 2018) - Hiểu ngữ cảnh hai chiều
+	BERT (Bidirectional Encoder Representations from Transformers) giúp mô hình đọc hiểu ngữ cảnh từ cả hai chiều (trái và phải).
+	RoBERTa (Facebook, 2019): Cải tiến bằng cách huấn luyện lâu hơn với nhiều dữ liệu hơn.
+	ALBERT (Google, 2019): Giảm số lượng tham số bằng cách chia sẻ trọng số.
+	DistilBERT (Hugging Face, 2019): Phiên bản nhỏ gọn hơn, nhanh hơn nhưng vẫn hiệu quả.
+
+🔗 Transformer Decoder xuất hiện → GPT-2 (OpenAI, 2019)
+	GPT-2 sử dụng bộ giải mã (Decoder) của Transformer, giúp sinh văn bản tự nhiên hơn.
+
+🤖 Giai đoạn LLMs bùng nổ (2020 - 2022)
+	Mô hình ngôn ngữ lớn thực sự phát triển mạnh mẽ trong giai đoạn này, với những cải tiến đáng kể về kích thước và khả năng sinh văn bản.
+
+🚀 GPT-3 (OpenAI, 2020) - 175 tỷ tham số
+	Một trong những mô hình lớn nhất vào thời điểm ra mắt, có khả năng tạo văn bản, dịch, tóm tắt, v.v.
+
+🔗 T5 (Google, 2020) - Mô hình Seq2Seq Transformer mạnh mẽ
+	T5 (Text-to-Text Transfer Transformer) áp dụng Transformer vào nhiều tác vụ NLP khác nhau.
+
+🔥 BART (Facebook, 2020) - Tối ưu hóa sinh văn bản
+	Kết hợp Encoder của BERT và Decoder của GPT, tối ưu hóa cho nhiệm vụ tóm tắt và sinh văn bản.
+
+🤗 Hugging Face phát triển mạnh - Thư viện Transformers phổ biến
+	Trở thành nền tảng hàng đầu trong việc sử dụng và huấn luyện LLMs.
+
+🔄 OpenAI API - GPT-3 được thương mại hóa
+	GPT-3 trở thành API, giúp dễ dàng ứng dụng AI vào thực tế.
+
+🏗 Codex (GPT-3.5, OpenAI, 2021) - Hỗ trợ lập trình (GitHub Copilot)
+	Ứng dụng của GPT trong viết code, hỗ trợ lập trình viên.
+
+🌐 Kỷ nguyên AI hội thoại & Đa phương thức (2023 - nay)
+	Trong giai đoạn này, AI không chỉ mạnh mẽ hơn mà còn hỗ trợ nhiều loại dữ liệu đầu vào (văn bản, hình ảnh, âm thanh).
+
+🔥 ChatGPT (GPT-3.5, GPT-4, OpenAI, 2023)
+	Ứng dụng chatbot AI hàng đầu, sử dụng kiến trúc GPT-4.
+🦙 LLaMA (Meta, 2023) - Đối thủ mở mã nguồn của GPT
+
+Meta (Facebook) phát triển LLMs mã nguồn mở để cạnh tranh với OpenAI.
+🏗 Falcon (AI21 Labs, 2023) - Thách thức OpenAI
+
+Một mô hình LLMs khác có hiệu suất cao.
+📌 Claude AI (Anthropic, 2023) - AI tập trung vào an toàn
+
+Được thiết kế với mục tiêu tránh các rủi ro AI độc hại.
+🏆 GPT-4 (OpenAI, 2023) - Cải tiến mạnh mẽ so với GPT-3
+
+Hỗ trợ xử lý đa phương thức, thông minh hơn GPT-3.
+🔥 Google Gemini (2024) - AI đa phương thức, cạnh tranh GPT-4
+
+Hỗ trợ hình ảnh, video, và văn bản.
+🤖 Mistral AI (2024) - LLMs mở mạnh mẽ
+
+Một đối thủ mới nổi trong lĩnh vực AI.
+🔮 Xu hướng & tương lai của LLMs
+🚀 AI đa phương thức (Multimodal AI)
+
+Kết hợp xử lý văn bản, hình ảnh, âm thanh, và video trong cùng một mô hình.
+🧠 Mô hình nhỏ gọn, tối ưu tài nguyên (Tiny LLMs)
+
+Cân bằng giữa sức mạnh AI và hiệu suất trên thiết bị nhỏ.
+🔎 Tăng tính minh bạch & kiểm soát AI (AI Ethics)
+
+Giảm thiểu thiên vị AI, cải thiện độ an toàn và đạo đức.
+🏗 Tích hợp AI vào ứng dụng thực tế (AI Assistants, Copilots)
+
+AI trở thành công cụ hỗ trợ con người trong nhiều lĩnh vực khác nhau.
+🔬 Hướng đến Trí tuệ nhân tạo tổng quát (AGI - Artificial General Intelligence)
+
+Mục tiêu cao nhất của AI: Một hệ thống có thể học và hiểu mọi tác vụ trí tuệ giống con người.
+
+
+
+
+
+
+

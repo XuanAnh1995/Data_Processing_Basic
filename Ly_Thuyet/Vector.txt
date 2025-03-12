@@ -1,0 +1,119 @@
+1. Vector databases 
+	Definition (Định nghĩa): 
+		một hệ thống lưu trữ và truy vấn dữ liệu dưới dạng vector embedding. Thay vì lưu trữ dữ liệu dạng văn bản 
+		hoặc bảng như SQL, Vector Database lưu các vector số thực có hàng trăm hoặc hàng ngàn chiều để tìm kiếm tương tự (Similarity Search).
+	Significance (ý nghĩa):	
+		Tìm kiếm nhanh & chính xác
+		Xử lý dữ liệu không có cấu trúc
+		Tích hợp với LLM (RAG)
+		Ứng dụng rộng rãi
+	Benefits of Vector Databases:
+		Storage unit (Đơn vị lưu trữ)
+		Efficient data handling (Xử lý dữ liệu hiệu quả)
+		Powerful search capabilities (Khả năng tìm kiếm mạnh mẽ)
+	Source: Text, Images, Audio
+
+	Increase in popularity (Sự gia tăng về mức độ phổ biến): 
+		Sự phát triển của LLMs (GPT, BERT, LLaMA)
+		Tìm kiếm theo ngữ nghĩa (Semantic Search)
+		Tăng trưởng của AI trong doanh nghiệp
+		Hiệu suất cao với tìm kiếm Approximate Nearest Neighbor (ANN)						
+
+2. vector embedding: ???
+	Vector Embedding là quá trình chuyển đổi dữ liệu phi cấu trúc (văn bản, hình ảnh, âm thanh, video) thành một dãy số nhiều chiều (vector số thực).
+	Những vector này giúp mô hình hiểu ý nghĩa, ngữ cảnh và mối quan hệ giữa các dữ liệu.
+
+
+Characteristic of the data (Đặc điểm của dữ liệu)
+
+E.g: In a music app, vector represent (biểu diễn) aspects (các khía cạnh)
+	Rhythm 		Nhịp điệu		
+	Melody		Giai điệu
+	Instruments	Nhạc cụ
+	Emotions	Cảm xúc
+
+Distance (Khoảng cách) OR Similatiry (Độ tương đồng)
+
+Historical Data:  
+	Early 2000s 	->   	2013					->  2017			-> 2018, 2019		-> 2021				-> 2022
+	Vectorwise 	-> 	FAISS (Facebook AI Similarity Search)	->  Word2Vec & BERT (Google)	-> Milvus, Weaviate	-> Pinecone (IDW Liberty)	-> ChromaDB, Weaviate (LangChain) 
+
+
+2. Vector space (Không gian vector)
+	add 
+	multiply 
+	scale (Inner product )
+
+E.g: Picture 	Painting's name 		Tên bức tranh
+		Epoch or period 		Thời đại || Giai đoạn
+		Style & technique 		Phong cách || Kỹ thuật
+		Size				Kích thước
+		Current location 		Vị trí hiện tại
+
+
+	Euclidean Distance: 	Khoảng cách Euclidean: 	Đo khoảng cách theo đường thẳng giữa 2 điểm trên giấy trong không gian 2 chiều
+	Manhattan Distance: 	Khoảng cách Manhattan: 	Đo khoảng cách giữa 2 điểm khi bạn có thể di chuyển theo hướng vuông góc
+	The Dot Product:	Tích vô hướng:		1 phép toán trong đại số tuyến tính dùng để tính tích của 2 Vector, 
+							Nó giúp đo độ tương tự giữa 2 vector trong không gian nhiều chiều
+
+3. Embedding : Nhúng		
+
+	Embeddings are dense representations of data items such as words, products, or users in a continuous vector space
+		Nhúng là các biểu diễn dày đặc của các mục dữ liệu như từ ngữ, sản phẩm, hoặc người dùng trong không gian vector liên tục
+	Quá trình chuyển đổi dữ liệu phi cấu trúc (văn bản, hình ảnh, âm thanh, video) thành các vector số thực trong không gian nhiều chiều. Các vector này
+		giúp mô hình AI hiểu được ngữ nghĩa và mối quan hệ giữa các dữ liệu
+
+4.  The most popular vector databases.:
+
+Pinecone:	Một cơ sở dữ liệu vector được quản lý được thiết kế để xây dựng và mở rộng các ứng dụng tìm kiếm sự tương đồng
+
+Milvus: 	Một cơ sở dữ liệu vector tiên tiến chuyên về tìm kiếm sự tương đồng trên quy mô lớn.
+		Tính linh hoạt và mạnh mẽ của nó có khả năng mở rộng cao
+		Khả năng lập chỉ mục.
+		Milvus hoàn toàn là mã nguồn mở, cho phép tùy chỉnh và tích hợp rộng rãi.s
+
+Weaviate:	Được thiết kế như một công cụ tìm kiếm vector mạnh mẽ, có khả năng mở rộng và thân thiện với người dùng giúp tăng cường tìm kiếm
+			và tự động phân loại thông qua tích hợp với các mô hình ML.
+		Một công cụ tìm kiếm vector nguồn mở kết hợp tìm kiếm vector với cơ sở dữ liệu đồ thị, cho phép
+			mô hình dữ liệu phong phú và tìm kiếm theo ngữ cảnh.
+
+Qdrant:		Cung cấp một công cụ tìm kiếm vector mã nguồn mở mạnh mẽ được tối ưu hóa
+			để có hiệu suất cao và khả năng mở rộng.
+
+
+5. Semantic Search (Similarity search): 	Semantic search or similarity search refers to searching for words that are close in meaning, 
+			instead of searching for words as exact matches.
+
+			Tìm kiếm ngữ nghĩa hoặc tìm kiếm tương tự đề cập đến việc tìm kiếm các từ có nghĩa gần giống nhau,
+			thay vì tìm kiếm các từ khớp chính xác
+
+			Là kỹ thuật tìm kiếm các đối tượng gần giống nhau trong không gian vector
+
+
+
+
+6: Meaning 
+
+7: Exact match
+
+8: Efficiency
+
+11: Recommendation systems
+
+12: Anomaly detection
+
+13: SQL 
+	Fixed schema
+	Data integrity
+	Keys and contraints
+
+14: NoSQL
+	Large datasets
+	Flexibility
+	Quick development
+
+15: Vector
+	Efficiency
+	Similarity search
+	AI
+ 
