@@ -1,3 +1,10 @@
+Retrieval-Augmented Generation (RAG):
+
+📌 RAG là gì?
+	🔹 Retrieval (Truy xuất thông tin): 	Lấy các tài liệu liên quan từ một nguồn dữ liệu lớn (ví dụ: Pinecone, FAISS).
+	🔹 Augmented (Tăng cường): 		Bổ sung thông tin vào truy vấn để mô hình hiểu rõ hơn.
+	🔹 Generation (Sinh văn bản): 		Dùng mô hình ngôn ngữ (T5, GPT, LLaMA, v.v.) để tạo ra câu trả lời dựa trên thông tin truy xuất.
+
 1. Vector databases 
 	Definition (Định nghĩa): 
 		một hệ thống lưu trữ và truy vấn dữ liệu dưới dạng vector embedding. Thay vì lưu trữ dữ liệu dạng văn bản 
@@ -123,29 +130,195 @@ Qdrant:		Cung cấp một công cụ tìm kiếm vector mã nguồn mở mạnh 
 	- GraphSAGE (2017)
 
 
+7. Fine-Tune Models (Tùy chỉnh mô hình AI)
 
-6: Meaning 
+	Fine-tuning (tinh chỉnh mô hình) là quá trình huấn luyện lại một mô hình đã có trên tập dữ liệu chuyên biệt để cải thiện hiệu suất trong một tác vụ cụ thể.
+	Điều này giúp tiết kiệm thời gian và tài nguyên thay vì huấn luyện một mô hình mới từ đầu.
 
-7: Exact match
+	Quy trình Fine-Tuning:
+	Pipeline fine-tuning một mô hình AI thường gồm:
+		Chọn mô hình gốc (Pre-trained Model) → GPT, BERT, Llama, Whisper, T5, v.v.
+		Chuẩn bị dữ liệu huấn luyện → Văn bản, giọng nói, hình ảnh, v.v.
+		Tiền xử lý dữ liệu → Chuẩn hóa, mã hóa (tokenize), tạo embedding.
+		Huấn luyện mô hình (Fine-tune) → Tinh chỉnh trọng số với dữ liệu mới
+		Đánh giá & tinh chỉnh (Evaluation & Hyperparameter tuning)
+		Triển khai mô hình & inference
 
-8: Efficiency
+	Fine-Tune các mô hình phổ biến:
 
-11: Recommendation systems
+		1. Fine-tune LLMs (GPT, Llama, T5, BERT)
+			✅ Ứng dụng: Tóm tắt văn bản, chatbot, hỏi đáp, sinh văn bản.
+			✅ Công cụ: Hugging Face, OpenAI API, LoRA, QLoRA, DeepSpeed.
 
-12: Anomaly detection
+		2. Fine-tune Whisper (Speech-to-Text)
+			✅ Ứng dụng: Nhận diện giọng nói (ASR), phiên âm, dịch giọng nói.
+			✅ Công cụ: OpenAI Whisper, Hugging Face, DeepSpeech.
 
-13: SQL 
-	Fixed schema
-	Data integrity
-	Keys and contraints
+		3. Fine-tune Vision Models (Stable Diffusion, ViT)
+			✅ Ứng dụng: Nhận diện ảnh, tạo ảnh, phân loại ảnh, OCR.
+			✅ Công cụ: Stable Diffusion, CLIP, ViT (Vision Transformer).
 
-14: NoSQL
-	Large datasets
-	Flexibility
-	Quick development
+1️. 	Đọc dữ liệu từ nhiều nguồn
+	Chúng ta sẽ trích xuất văn bản từ PDF, TXT, CSV, hoặc Web Scraping.
 
-15: Vector
-	Efficiency
-	Similarity search
-	AI
- 
+	Đọc PDF & TXT: 
+	E.g: 
+
+		from langchain.document_loaders import PyPDFLoader, TextLoader
+
+		pdf_loader = PyPDFLoader("data/document.pdf")
+		txt_loader = TextLoader("data/text.txt")
+
+		documents = pdf_loader.load() + txt_loader.load()	
+
+	Đọc CSV:
+	E.g:
+	
+		import pandas as pd
+
+		df = pd.read_csv("data/data.csv")
+		documents = df["text_column"].tolist()  # Giả sử cột chứa văn bản là "text_column"
+
+
+	Web Scraping với BeautifulSoup:
+	E.g:
+
+		import requests
+		from bs4 import BeautifulSoup
+
+		url = "https://example.com/article"
+		response = requests.get(url)
+		soup = BeautifulSoup(response.text, "html.parser")
+		text = soup.get_text()
+		documents.append(text)
+
+2.	Xử lý tiền văn bản
+
+	Bước 1: Làm sạch văn bản:
+
+			Loại bỏ HTML/XML tags (nếu có): Nếu dữ liệu thu thập từ web, loại bỏ các thẻ HTML/XML không cần thiết.
+			Loại bỏ ký tự đặc biệt và dấu câu: Loại bỏ các ký tự không phải chữ và số
+			Chuyển đổi về chữ thường: Đảm bảo tính nhất quán.
+			Xóa khoảng trắng thừa: Loại bỏ khoảng trắng thừa ở đầu, cuối và giữa các từ.
+		
+	Bước 2:	Chuẩn hóa văn bản: 
+			Xử lý mã hóa ký tự (encoding): Đảm bảo văn bản được mã hóa đúng cách (UTF-8)
+			Chuẩn hóa các ký tự Unicode: Chuyển đổi các ký tự tương tự về dạng chuẩn.
+			Xử lý các lỗi chính tả cơ bản: Sử dụng thư viện hoặc API để sửa lỗi chính tả phổ biến.
+		
+	Bước 3:	Loại Bỏ Stop Words:
+			Sử dụng danh sách stop words phù hợp: Chọn danh sách stop words phù hợp với ngôn ngữ và lĩnh vực của dữ liệu
+
+	Bước 4:	Chuẩn Hóa Từ Ngữ:
+			Stemming hoặc Lemmatization
+				Lemmatization: Ưu tiên khi cần giữ lại ý nghĩa của từ (ví dụ: phân tích ngữ nghĩa)
+				Stemming: Ưu tiên khi cần tốc độ xử lý nhanh và không quá quan trọng về ý nghĩa của từ (ví dụ: tìm kiếm thông tin).
+		
+	Bước 5:	Gắn Thẻ Loại Từ (POS Tagging)
+			Sử dụng thư viện NLP (ví dụ: NLTK, spaCy): Gắn thẻ loại từ cho mỗi từ trong văn bản.
+		
+	Bước 6:	Nhận Dạng Thực Thể Có Tên (NER)
+			Sử dụng mô hình NER được huấn luyện sẵn hoặc tự huấn luyện: Nhận dạng và phân loại các thực thể có tên (ví dụ: tên người, tổ chức, địa điểm).
+		
+	Bước 7:	Phân Tích Cảm Xúc (Sentiment Analysis):
+			Sử dụng mô hình phân tích cảm xúc được huấn luyện sẵn hoặc tự huấn luyện: Xác định cảm xúc của văn bản (ví dụ: tích cực, tiêu cực, trung lập).
+
+	Bước 8:	Tokenization:
+			Sử dụng tokenizer phù hợp (ví dụ: WordPiece, SentencePiece): Chia văn bản thành các token (từ, cụm từ, ký tự).
+
+	Bước 9:	Chuyển Đổi Token Thành ID:
+			Sử dụng từ điển (vocabulary) của mô hình: Chuyển đổi các token thành ID số.
+	
+***	Lưu Ý:
+
+		Thứ tự các bước có thể thay đổi tùy thuộc vào yêu cầu cụ thể của dự án.
+		Một số bước có thể được bỏ qua hoặc thêm vào tùy thuộc vào loại dữ liệu và mục tiêu của dự án.
+		Việc lựa chọn thư viện và mô hình NLP phù hợp cũng rất quan trọng.
+		
+
+4. 	Lưu trữ Vector vào Pinecone
+
+	Dùng Pinecone để lưu trữ vector embedding và hỗ trợ truy xuất.
+
+	E.g: 
+
+		import os
+		from pinecone import Pinecone, ServerlessSpec
+		from dotenv import load_dotenv, find_dotenv
+		import pinecone
+		from sentence_transformers import SentenceTransformer
+
+		%load_ext dotenv
+		%dotenv
+
+		load_dotenv(find_dotenv(), override= True)
+
+		pc = Pinecone(api_key= os.environ.get("PINECONE_API_KEY"), environment = os.environ.get("PINECONE_ENV"))
+		
+		index_name = "my-index"
+		dimension = 384
+		metric = "cosine"
+
+		if index_name in [index.name for index in pc.list_indexes()]:
+    			pc.delete_index(index_name)
+    			print(f"{index_name} successfully delete")
+		else :
+    			print(f"{index_name} not in index list")
+
+		pc.create_index(
+    			name= index_name,
+    			dimension= dimension,
+    			metric= metric,
+    			spec= ServerlessSpec(
+        			cloud= "aws",
+        			region= "us-east-1"
+    			)
+		)
+
+		.... 
+
+5.	Truy xuất thông tin khi có truy vấn
+
+	Tìm kiếm Similarity trong Pinecone
+
+	E.g: 
+		query = "Làm thế nào để fine-tune BERT?"
+		query_embedding = embedding_model.encode(query).tolist()
+
+		# Tìm kiếm top 3 kết quả tương đồng nhất
+		results = index.query(vector=query_embedding, top_k=3, include_metadata=True)
+
+		for match in results["matches"]:
+    			print(f"Score: {match['score']}, Text: {match['metadata']['text']}")
+
+
+6.	Sinh văn bản với T5 dựa trên kết quả truy xuất
+
+	T5 để tạo văn bản dựa trên thông tin từ Pinecone.
+		
+		Load mô hình T5
+		
+			from transformers import T5Tokenizer, T5ForConditionalGeneration
+
+			# Load mô hình T5
+			t5_model = T5ForConditionalGeneration.from_pretrained("t5-small")
+			t5_tokenizer = T5Tokenizer.from_pretrained("t5-small")
+
+
+		Tạo văn bản với T5
+
+			# Ghép các kết quả tìm kiếm thành prompt đầu vào
+			context = " ".join([match["metadata"]["text"] for match in results["matches"]])
+			prompt = f"Trả lời câu hỏi dựa trên ngữ cảnh: {context} \nCâu hỏi: {query}"
+
+			# Sinh văn bản
+			inputs = t5_tokenizer(prompt, return_tensors="pt", truncation=True)
+			outputs = t5_model.generate(**inputs, max_length=200)
+
+			print("Câu trả lời:", t5_tokenizer.decode(outputs[0], skip_special_tokens=True))
+
+
+
+
+
+
